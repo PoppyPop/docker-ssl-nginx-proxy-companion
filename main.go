@@ -173,14 +173,14 @@ func readLines(path string) ([]string, error) {
 	var lines []string
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		lines = append(lines, scanner.Text())
+		lines = append(lines, strings.Trim(scanner.Text(), " ")) 
 	}
 	return lines, scanner.Err()
 }
 
 var serverUrl = flag.String("server", "http://yugo.moot.fr:8888", "server url")
 var sslDir = flag.String("certs", "/certs/", "certs directory")
-var hostFile = flag.String("file", "/cfssl_service_data", "hosts file")
+var hostFile = flag.String("file", "/cfssl/cfssl_service_data", "hosts file")
 
 const Profile = "server"
 
