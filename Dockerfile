@@ -1,8 +1,7 @@
 FROM golang:1.9-alpine as builder
 
-RUN go get github.com/PoppyPop/docker-ssl-nginx-proxy-companion   
-
+RUN go install github.com/PoppyPop/docker-ssl-nginx-proxy-companion   
 
 FROM jwilder/docker-gen  
 
-COPY --from=builder /go/src/github.com/PoppyPop/docker/webui-aria2/go-automate-ended/go-automate-ended .
+ADD --from=builder /go/bin/docker-ssl-nginx-proxy-companion /
