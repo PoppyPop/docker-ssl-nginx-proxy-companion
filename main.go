@@ -10,6 +10,7 @@ import (
 	"bufio"
 	. "github.com/PoppyPop/cfssl-go-client"
 	"time"
+	"strings" 
 )
 
 func HandleDomain(domain []string) (missing []string, renew []*JsonInfoResponse) {

@@ -6,7 +6,7 @@ VERSION = latest
 all: build
 
 build:	
-	docker build -t $(NAME):$(VERSION) --rm .
+	docker build --no-cache -t $(NAME):$(VERSION) --rm .
 
 run:
 	docker run -ti --rm $(NAME):$(VERSION)
