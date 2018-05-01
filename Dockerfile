@@ -10,3 +10,4 @@ RUN go get github.com/PoppyPop/docker-ssl-nginx-proxy-companion && go install gi
 
 FROM jwilder/docker-gen  
 COPY --from=builder /go/bin/docker-ssl-nginx-proxy-companion /
+ADD notify.sh /notify.sh
