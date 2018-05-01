@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 
 function docker_api {
@@ -71,7 +71,7 @@ CERT_DIR=${CERT_DIR:=/certs/}
 
 /docker-ssl-nginx-proxy-companion -certs=${CERT_DIR}
 
-local modifiedFiles=$(find ${CERT_DIR} -mmin -1 -type f -print | wc -l)
+modifiedFiles=$(find ${CERT_DIR} -mmin -1 -type f -print | wc -l)
 if [[ "${modifiedFiles}" -ne "0" ]]; then
 
   reload_nginx 
