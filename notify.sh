@@ -69,7 +69,7 @@ function get_nginx_proxy_container {
 
 CERT_DIR=${CERT_DIR:=/certs/}
 
-/docker-ssl-nginx-proxy-companion -certs=${CERT_DIR}
+/docker-ssl-nginx-proxy-companion -server=${CERT_SERVER} -certs=${CERT_DIR}
 
 modifiedFiles=$(find ${CERT_DIR} -mmin -1 -type f -print | wc -l)
 if [[ "${modifiedFiles}" -ne "0" ]]; then
