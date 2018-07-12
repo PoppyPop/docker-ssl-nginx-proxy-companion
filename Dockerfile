@@ -7,7 +7,7 @@ RUN set -xe \
 RUN go get github.com/PoppyPop/docker-ssl-nginx-proxy-companion && go install github.com/PoppyPop/docker-ssl-nginx-proxy-companion   
 
 FROM jwilder/docker-gen  
-RUN apk add --update --no-cache jq bash curl ca-certificates && \
+RUN apk add --update --no-cache jq bash tzdata curl ca-certificates && \
 	 mkdir -p /usr/local/share/ca-certificates/ && \
 	 rm /var/cache/apk/* 
 	 
